@@ -1,0 +1,24 @@
+@font-face {
+  font-family: JameelNooriNastaliq;
+  src: url($JameelNooriNastaliq) format("truetype");
+}
+
+body {
+  font-family: JameelNooriNastaliq, serif;
+}
+
+.d-editor-container--rich-editor-enabled
+  .d-editor-textarea-wrapper
+  textarea.d-editor-input,
+.form-vertical .control-label:not(.checkbox-label) {
+  font-family: JameelNooriNastaliq, serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: JameelNooriNastaliq, serif;
+}
