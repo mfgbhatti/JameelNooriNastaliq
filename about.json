@@ -3,6 +3,7 @@
   "about_url": "https://github.com/mfgbhatti/JameelNooriNastaliq",
   "license_url": "https://github.com/mfgbhatti/JameelNooriNastaliq/blob/main/LICENSE",
   "assets": {
-    "JameelNooriNastaliq": "assets/JameelNooriNastaliq.ttf"
+    "JameelNooriNastaliqTrue": "assets/JameelNooriNastaliq.ttf",
+    "JameelNooriNastaliqWeb": "assets/JameelNooriNastaliq.woff2"
   }
 }

@@ -1,17 +1,31 @@
 @font-face {
-  font-family: JameelNooriNastaliq;
-  src: url($JameelNooriNastaliq) format("truetype");
+  font-family: JameelNooriNastaliqTrue;
+  src: url($JameelNooriNastaliqTrue) format("truetype");
 }
 
-body {
-  font-family: JameelNooriNastaliq, serif;
+@font-face {
+  font-family: JameelNooriNastaliqWeb;
+  src: url($JameelNooriNastaliqWeb) format("woff2");
 }
 
-.d-editor-container--rich-editor-enabled
-  .d-editor-textarea-wrapper
-  textarea.d-editor-input,
-.form-vertical .control-label:not(.checkbox-label) {
-  font-family: JameelNooriNastaliq, serif !important;
+:root {
+  /* Font Family */
+  --font-family: JameelNooriNastaliqTrue, Arial, sans-serif;
+  --heading-font-family: JameelNooriNastaliqTrue, Arial, sans-serif;
+
+  /* Font Sizes */
+  /* Jameel Noori 20px*/
+  --base-font-size: 1.25em;
+
+  --font-variant-ligatures: no-common-ligatures discretionary-ligatures historical-ligatures no-contextual;
+}
+
+// * {
+//     font-weight: normal !important;
+// }
+
+html {
+  font-variant-ligatures: var(--font-variant-ligatures);
 }
 
 h1,
@@ -20,5 +34,5 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: JameelNooriNastaliq, serif;
+  font-variant-ligatures: var(--font-variant-ligatures);
 }
