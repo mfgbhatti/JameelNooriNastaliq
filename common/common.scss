@@ -14,30 +14,38 @@
   --heading-font-family: JameelNooriNastaliqWeb, Arial, sans-serif;
 
   /* Font Sizes */
-  --base-font-size-smallest: 0.75em;
-  --base-font-size-smaller: 1em;
-  --base-font-size: 1.25em;
-  --base-font-size-larger: 1.50em;
-  --base-font-size-largest: 1.75em;
+  --base-font-size-smallest: 0.6em;
+  --base-font-size-smaller: 0.8em;
+  --base-font-size: 1em;
+  --base-font-size-larger: 1.2em;
+  --base-font-size-largest: 1.4em;
 
   /* Heading Font Sizes */
-  --font-up-6: 2.546em;
-  --font-up-5: 2.25em;
-  --font-up-4: 2.0011em;
-  --font-up-3: 1.7657em;
-  --font-up-2: 1.5695em;
-  --font-up-1: 1.3987em; // 2^(1/5)
-  --font-0: 1.25em;
+  --font-up-6: 2.0368em;
+  --font-up-5: 1.8em;
+  --font-up-4: 1.60088em;
+  --font-up-3: 1.41256em;
+  --font-up-2: 1.2556em;
+  --font-up-1: 1.11896em;
+  --font-0: 1em;
 
-  --font-variant-ligatures: no-common-ligatures discretionary-ligatures historical-ligatures no-contextual;
+  --font-variant-ligatures: normal // no-common-ligatures discretionary-ligatures historical-ligatures no-contextual;
 }
-
-
-
-
 
 html {
   font-variant-ligatures: var(--font-variant-ligatures);
+}
+
+@media (prefers-color-scheme: dark) {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-variant-ligatures: var(--font-variant-ligatures);
+  }
 }
 
 h1,
