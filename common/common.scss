@@ -27,7 +27,9 @@
   --font-up-1: 1.3987em; // 2^(1/5)
   --font-0: 1.25em;
 
-  --font-variant-ligatures: normal
+  --font-variant-ligatures: normal;
+  --font-feature-settings: normal;
+
 }
 
 html {
@@ -43,6 +45,7 @@ html {
   h5,
   h6 {
     font-variant-ligatures: var(--font-variant-ligatures);
+    font-feature-settings: var(--font-feature-settings);
   }
 }
 
@@ -53,4 +56,6 @@ h4,
 h5,
 h6 {
   font-variant-ligatures: var(--font-variant-ligatures);
+  font-feature-settings: var(--font-feature-settings);
+
 }
