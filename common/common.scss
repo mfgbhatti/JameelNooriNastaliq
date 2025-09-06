@@ -9,27 +9,10 @@
 }
 
 :root {
-  /* Font Family */
   --font-family: JameelNooriNastaliqWeb, Arial, sans-serif;
   --heading-font-family: JameelNooriNastaliqWeb, Arial, sans-serif;
 
-  /* Font Sizes */
-  --base-font-size-smallest: 0.6em;
-  --base-font-size-smaller: 0.8em;
-  --base-font-size: 1em;
-  --base-font-size-larger: 1.2em;
-  --base-font-size-largest: 1.4em;
-
-  /* Heading Font Sizes */
-  --font-up-6: 2.0368em;
-  --font-up-5: 1.8em;
-  --font-up-4: 1.60088em;
-  --font-up-3: 1.41256em;
-  --font-up-2: 1.2556em;
-  --font-up-1: 1.11896em;
-  --font-0: 1em;
-
-  --font-variant-ligatures: normal // no-common-ligatures discretionary-ligatures historical-ligatures no-contextual;
+  --font-variant-ligatures: normal
 }
 
 html {
