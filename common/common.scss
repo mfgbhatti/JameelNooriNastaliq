@@ -38,6 +38,11 @@ html {
   font-variant-ligatures: var(--font-variant-ligatures);
 }
 
+.extra-info-wrapper .topic-link {
+  overflow: initial;
+  margin-top: 0.875em;
+}
+
 @media (prefers-color-scheme: dark) {
 
   h1,
