@@ -43,6 +43,12 @@ html {
   margin-top: 0.215em;
 }
 
+@media (max-width: 39.999rem) {
+  .topic-body .cooked {
+    overflow: initial;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
 
   h1,
@@ -64,5 +70,4 @@ h5,
 h6 {
   font-variant-ligatures: var(--font-variant-ligatures);
   font-feature-settings: var(--font-feature-settings);
-
 }
