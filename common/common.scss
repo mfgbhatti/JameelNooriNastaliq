@@ -29,6 +29,20 @@
   --font-up-5: 1.75em;
   --font-up-6: 1.875em;
 
+  /* Smaller steps: Discourse's defaults (0.87em, 0.76em...) are too small
+     for Nastaliq, which already renders small at a given size */
+  --font-down-1: 1em;
+  --font-down-2: 0.9em;
+  --font-down-3: 0.8em;
+  --font-down-1-rem: 1rem;
+  --font-down-2-rem: 0.9rem;
+
+  /* Taller rows and looser leading so tall glyphs are not clipped */
+  --d-sidebar-row-height: 3em;
+  --line-height-small: 1.6;
+  --line-height-medium: 1.9;
+  --line-height-large: 2;
+
   --font-variant-ligatures: normal;
   --font-feature-settings: normal;
 
@@ -36,6 +50,22 @@
 
 html {
   font-variant-ligatures: var(--font-variant-ligatures);
+}
+
+.sidebar-section-link-wrapper .sidebar-section-link-content-text,
+.sidebar-section-header-text {
+  line-height: 2.2;
+}
+
+.select-kit .select-kit-header,
+.select-kit .select-kit-row,
+select {
+  line-height: var(--line-height-large);
+}
+
+.select-kit .select-kit-header .d-button-label,
+.select-kit .select-kit-row .name {
+  padding-block: 0.1em;
 }
 
 .extra-info-wrapper .topic-link {
