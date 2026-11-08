@@ -101,3 +101,27 @@ h6 {
   font-variant-ligatures: var(--font-variant-ligatures);
   font-feature-settings: var(--font-feature-settings);
 }
+
+/* Header topic title and category: Nastaliq's tall strokes and deep tails
+   were cut off by the overflow:hidden boxes Discourse uses for truncation.
+   Give those boxes enough line height, and a taller header on larger screens
+   so the two lines still fit. */
+.extra-info-wrapper {
+  line-height: 1.6;
+}
+
+.extra-info-wrapper .header-title {
+  line-height: 1.6;
+}
+
+.extra-info-wrapper .categories-wrapper,
+.extra-info-wrapper .badge-category__wrapper,
+.extra-info-wrapper .badge-category__name {
+  line-height: 1.7;
+}
+
+@media (min-width: 40rem) {
+  .d-header {
+    height: 4.6em;
+  }
+}
