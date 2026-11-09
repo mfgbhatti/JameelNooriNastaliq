@@ -79,6 +79,21 @@ select {
   }
 }
 
+/* New/unread reply count badge: core sizes it from --font-0 and
+   --line-height-small, which are larger here because of the Nastaliq
+   settings above. Use explicit, compact values instead. */
+.badge-notification,
+.topic-list .badge-notification,
+.topic-list .category-topic-link td.num .badge-notification {
+  font-size: 0.75em;
+  line-height: 1.3;
+  padding: 0.1em 0.45em;
+  min-width: 1.4em;
+  border-radius: 0.6em;
+  vertical-align: middle;
+  top: 0;
+}
+
 @media (prefers-color-scheme: dark) {
 
   h1,
