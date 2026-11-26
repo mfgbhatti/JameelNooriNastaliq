@@ -1,101 +1,68 @@
 @font-face {
   font-family: JameelNooriNastaliqTrue;
-  src: url($JameelNooriNastaliqTrue) format("truetype");
+  src: url($JameelNooriNastaliqTrue) format('truetype');
 }
 
 @font-face {
   font-family: JameelNooriNastaliqWeb;
-  src: url($JameelNooriNastaliqWeb) format("woff2");
+  src: url($JameelNooriNastaliqWeb) format('woff2');
 }
 
 :root {
+  /* Font family */
   --font-family: JameelNooriNastaliqWeb, Arial, sans-serif;
   --heading-font-family: JameelNooriNastaliqWeb, Arial, sans-serif;
 
   /* Font Sizes */
+  --base-font-size-smallest: calc(var(--base-font-size) - 0.375em);
+  --base-font-size-smaller: calc(var(--base-font-size) - 0.125em);
+  --base-font-size: 1em; //16
+  --base-font-size-larger: calc(var(--base-font-size) + 0.125em);
+  --base-font-size-largest: calc(var(--base-font-size) + 0.25em);
 
-  --base-font-size-smallest: 0.875em;
-  --base-font-size-smaller: 1em;
-  --base-font-size: 1.125em;
-  --base-font-size-larger: 1.25em;
-  --base-font-size-largest: 1.375em;
+  /* Each step up multiplies the previous size by 1.1487, while each step down divides by 1.1487. */
+  --font-up-6: calc(var(--font-0) * 2.296);
+  --font-up-5: calc(var(--font-0) * 2);
+  --font-up-4: calc(var(--font-0) * 1.7511);
+  --font-up-3: calc(var(--font-0) * 1.5157);
+  --font-up-2: calc(var(--font-0) * 1.3195);
+  --font-up-1: calc(var(--font-0) * 1.1487);
+  --font-0: var(--base-font-size);
+  --font-down-1: calc(var(--font-0) * 0.8706);
+  --font-down-2: calc(var(--font-0) * 0.7579);
+  --font-down-3: calc(var(--font-0) * 0.6599);
+  --font-down-4: calc(var(--font-0) * 0.5745);
+  --font-down-5: calc(var(--font-0) * 0.5);
+  --font-down-6: calc(var(--font-0) * 0.4355);
+  --font-up-3-rem: calc(var(--font-0-rem) * 1.5157);
+  --font-up-2-rem: calc(var(--font-0-rem) * 1.3195);
+  --font-up-1-rem: calc(var(--font-0-rem) * 1.1487);
+  --font-0-rem: 1rem;
+  --font-down-1-rem: calc(var(--font-0-rem) * 0.8706);
+  --font-down-2-rem: calc(var(--font-0-rem) * 0.7579);
 
-  /* Heading Font Sizes */
-  --font-0: 1.125em;
-  --font-up-1: 1.25em;
-  --font-up-2: 1.375em;
-  --font-up-3: 1.5em;
-  --font-up-4: 1.625em;
-  --font-up-5: 1.75em;
-  --font-up-6: 1.875em;
+  /* Line height */
+  --line-height-large: 1.2;
+  --cooked-line-height: 1.3;
 
-  /* Smaller steps: Discourse's defaults (0.87em, 0.76em...) are too small
-     for Nastaliq, which already renders small at a given size */
-  --font-down-1: 1em;
-  --font-down-2: 0.9em;
-  --font-down-3: 0.8em;
-  --font-down-1-rem: 1rem;
-  --font-down-2-rem: 0.9rem;
-
-  /* Taller rows and looser leading so tall glyphs are not clipped */
-  --d-sidebar-row-height: 3em;
-  --line-height-small: 1.6;
-  --line-height-medium: 1.9;
-  --line-height-large: 2;
-
+  /* Font ligature */
   --font-variant-ligatures: normal;
   --font-feature-settings: normal;
-
 }
 
+/* Styles applied ONLY when the screen is 768px or wider (Tablets/Desktops) */
+@media screen and (min-width: 768px) {
+  :root {
+    /* Font Sizes */
+    --base-font-size: 1.125em;
+    --font-0-rem: 1rem;
+  }
+}
 html {
   font-variant-ligatures: var(--font-variant-ligatures);
 }
 
-.sidebar-section-link-wrapper .sidebar-section-link-content-text,
-.sidebar-section-header-text {
-  line-height: 2.2;
-}
-
-.select-kit .select-kit-header,
-.select-kit .select-kit-row,
-select {
-  line-height: var(--line-height-large);
-}
-
-.select-kit .select-kit-header .d-button-label,
-.select-kit .select-kit-row .name {
-  padding-block: 0.1em;
-}
-
-.extra-info-wrapper .topic-link {
-  overflow: initial;
-  margin-top: 0.215em;
-}
-
-@media (max-width: 39.999rem) {
-  .topic-body .cooked {
-    overflow: initial;
-  }
-}
-
-/* New/unread reply count badge: core sizes it from --font-0 and
-   --line-height-small, which are larger here because of the Nastaliq
-   settings above. Use explicit, compact values instead. */
-.badge-notification,
-.topic-list .badge-notification,
-.topic-list .category-topic-link td.num .badge-notification {
-  font-size: 0.75em;
-  line-height: 1.3;
-  padding: 0.1em 0.45em;
-  min-width: 1.4em;
-  border-radius: 0.6em;
-  vertical-align: middle;
-  top: 0;
-}
-
 @media (prefers-color-scheme: dark) {
-
   h1,
   h2,
   h3,
@@ -115,28 +82,4 @@ h5,
 h6 {
   font-variant-ligatures: var(--font-variant-ligatures);
   font-feature-settings: var(--font-feature-settings);
-}
-
-/* Header topic title and category: Nastaliq's tall strokes and deep tails
-   were cut off by the overflow:hidden boxes Discourse uses for truncation.
-   Give those boxes enough line height, and a taller header on larger screens
-   so the two lines still fit. */
-.extra-info-wrapper {
-  line-height: 1.6;
-}
-
-.extra-info-wrapper .header-title {
-  line-height: 1.6;
-}
-
-.extra-info-wrapper .categories-wrapper,
-.extra-info-wrapper .badge-category__wrapper,
-.extra-info-wrapper .badge-category__name {
-  line-height: 1.7;
-}
-
-@media (min-width: 40rem) {
-  .d-header {
-    height: 4.6em;
-  }
 }
